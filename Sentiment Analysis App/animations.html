@@ -1,0 +1,110 @@
+<!-- animations.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Balloons Animation */
+        .balloon {
+            position: absolute;
+            bottom: -150px;  /* Start below the page */
+            width: 120px;  /* Larger size */
+            height: 150px;  /* Larger size */
+            background-color: #ff79c6;
+            border-radius: 50%;
+            animation: moveBalloon 2s linear infinite;  /* Faster movement (2 seconds) */
+        }
+
+        .balloon:nth-child(odd) {
+            background-color: #ff6347; /* Red for odd balloons */
+        }
+
+        .balloon:nth-child(even) {
+            background-color: #00bcd4; /* Blue for even balloons */
+        }
+
+        @keyframes moveBalloon {
+            0% {
+                bottom: -150px;
+            }
+            100% {
+                bottom: 100%;  /* Move to the bottom of the screen */
+                transform: translateX(-50%) rotate(720deg);  /* Rotates as it floats */
+            }
+        }
+
+        /* Stars Animation */
+        .star {
+            position: absolute;
+            bottom: -100px;  /* Start below the page */
+            width: 20px;
+            height: 20px;
+            background-color: #ffeb3b;  /* Yellow for stars */
+            border-radius: 50%;
+            animation: moveStar 3s linear infinite;  /* Fast movement (3 seconds) */
+        }
+
+        @keyframes moveStar {
+            0% {
+                bottom: -100px;
+            }
+            100% {
+                bottom: 100%;  /* Move to the bottom of the screen */
+                transform: translateX(-50%) rotate(720deg);  /* Rotates as it floats */
+            }
+        }
+
+        /* Falling Trees Animation */
+        .tree {
+            position: absolute;
+            top: -150px;  /* Start above the page */
+            width: 50px;
+            height: 120px;
+            background-color: #228B22;  /* Green color for trees */
+            border-radius: 10% 10% 0 0;
+            animation: fallTree 1s linear infinite;  /* Very fast movement (1 second) */
+        }
+
+        @keyframes fallTree {
+            0% {
+                top: -150px;  /* Start from top */
+            }
+            100% {
+                top: 100%;  /* Fall to bottom */
+                transform: rotate(720deg);  /* Rotates as it falls */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="position: relative; width: 100%; height: 100vh; overflow: hidden;">
+        <!-- Balloons -->
+        <div class="balloon" style="left: 5%;"></div>
+        <div class="balloon" style="left: 20%;"></div>
+        <div class="balloon" style="left: 40%;"></div>
+        <div class="balloon" style="left: 60%;"></div>
+        <div class="balloon" style="left: 80%;"></div>
+        <div class="balloon" style="left: 10%;"></div>
+        <div class="balloon" style="left: 30%;"></div>
+        <div class="balloon" style="left: 50%;"></div>
+        <div class="balloon" style="left: 70%;"></div>
+        <div class="balloon" style="left: 90%;"></div>
+
+        <!-- Stars -->
+        <div class="star" style="left: 10%;"></div>
+        <div class="star" style="left: 30%;"></div>
+        <div class="star" style="left: 50%;"></div>
+        <div class="star" style="left: 70%;"></div>
+        <div class="star" style="left: 90%;"></div>
+        
+        <!-- Trees (for negative sentiment) -->
+        <div class="tree" style="left: 10%;"></div>
+        <div class="tree" style="left: 30%;"></div>
+        <div class="tree" style="left: 50%;"></div>
+        <div class="tree" style="left: 70%;"></div>
+        <div class="tree" style="left: 90%;"></div>
+    </div>
+</body>
+</html>
